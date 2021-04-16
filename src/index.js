@@ -1,5 +1,4 @@
 import * as InternetTime from 'dot-beat-time';
+import { makeHowdy } from './howdy'
 
-export function Howdy() {
-  console.log(`The time is ${InternetTime.now()}`);
-}
+export const Howdy = makeHowdy(InternetTime)

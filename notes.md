@@ -1,3 +1,3 @@
-- [] Unbundled, with URL imports
-
-Exporting conditional exports: https://nodejs.org/api/packages.html#packages_conditional_exports
+- [x] Unbundled, with URL imports
+- [] Output different formats https://esbuild.github.io/api/#format-esm
+- [] Add conditional exports: https://nodejs.org/api/packages.html#packages_conditional_exports
