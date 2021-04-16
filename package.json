@@ -3,10 +3,20 @@
   "version": "1.0.0",
   "description": "A package that works in many environments and runtimes",
   "main": "src/index.js",
+  "exports": {
+    "import": {
+      "browser": "dist/poly.esm.js",
+      "node": "dist/poly.node.js",
+      "deno": "dist/poly.deno.js"
+    },
+    "require": "dist/poly.node.cjs.js"
+  },
   "scripts": {
-    "build": "npm-run-all --parallel build-esm build-deno build-browser build-browser-bundle",
+    "build": "rm dist/* && npm-run-all --parallel build-esm build-deno build-node build-browser build-browser-bundle build-node-cjs",
     "build-esm": "node scripts/build-esm.js",
     "build-deno": "node scripts/build-deno.js",
+    "build-node": "node scripts/build-node.js",
+    "build-node-cjs": "node scripts/build-node-cjs.js",
     "build-browser": "node scripts/build-browser.js",
     "build-browser-bundle": "node scripts/build-browser-bundle.js",
     "test": "echo \"Error: no test specified\" && exit 1"

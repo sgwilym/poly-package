@@ -2,7 +2,7 @@ const plugins = require("./plugins")
 
 require("esbuild")
   .build({
-    entryPoints: ["src/index.browser.js"],
+    entryPoints: ["src/index.deno.js"],
     bundle: true,
     format: 'esm',
     outfile: "dist/poly.deno.js",
