@@ -8,6 +8,12 @@ This is some work I did figuring out how I could create a codebase which could:
 
 I think I have something which ticks these boxes? Just trying to figure out some patterns here.
 
+## Setup
+
+`npm install && npm run build`
+
+This will build the codebase for these different targets and output the results in `/dist`.
+
 ## Orientation
 
 ### Source
