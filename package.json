@@ -1,0 +1,21 @@
+{
+  "name": "poly-package",
+  "version": "1.0.0",
+  "description": "A package that works in many environments and runtimes",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "npm-run-all --parallel build-unbundled build-bundle",
+    "build-unbundled": "./node_modules/.bin/esbuild src/index.js --outfile=dist/poly.unbundled.js",
+    "build-bundle": "./node_modules/.bin/esbuild src/index.js --bundle --outfile=dist/poly.bundled.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sam Gwilym",
+  "license": "ISC",
+  "devDependencies": {
+    "esbuild": "^0.11.11",
+    "npm-run-all": "^4.1.5"
+  },
+  "dependencies": {
+    "dot-beat-time": "^1.2.1"
+  }
+}
