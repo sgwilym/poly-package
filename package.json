@@ -12,7 +12,7 @@
     "require": "dist/poly.node.cjs.js"
   },
   "scripts": {
-    "build": "rm dist/* && npm-run-all --parallel build-esm build-deno build-node build-browser build-browser-bundle build-node-cjs",
+    "build": "rm -f dist/* && npm-run-all --parallel build-esm build-deno build-node build-browser build-browser-bundle build-node-cjs",
     "build-esm": "node scripts/build-esm.js",
     "build-deno": "node scripts/build-deno.js",
     "build-node": "node scripts/build-node.js",
