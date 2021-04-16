@@ -4,7 +4,8 @@
   "description": "A package that works in many environments and runtimes",
   "main": "src/index.js",
   "scripts": {
-    "build": "npm-run-all --parallel build-unbundled build-bundle",
+    "build": "npm-run-all --parallel build-unbundled build-bundle build-url-bundled",
+    "build-url-bundled": "node scripts/build-url-import.js",
     "build-unbundled": "./node_modules/.bin/esbuild src/index.js --outfile=dist/poly.unbundled.js",
     "build-bundle": "./node_modules/.bin/esbuild src/index.js --bundle --outfile=dist/poly.bundled.js",
     "test": "echo \"Error: no test specified\" && exit 1"
