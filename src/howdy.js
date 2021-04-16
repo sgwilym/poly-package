@@ -1,5 +1,5 @@
-export function makeHowdy(InternetTimeDep) {
-  return function Howdy() {
-    console.log(`The time is ${InternetTimeDep.now()}`);
-  }
+import { InternetTime } from '../deps';
+
+export function Howdy() {
+    console.log(`The time is ${InternetTime.now()}`);
 }

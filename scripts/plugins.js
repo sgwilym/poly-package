@@ -1,3 +1,13 @@
+let depsPlugin = {
+  name: 'deps',
+  setup(build) {
+    let path = require('path')
+    build.onResolve({ filter: /[\.\/]+\/deps/ }, () => ({
+      path: path.resolve('./deps.url.js')
+    }))
+  }
+}
+
 let httpPlugin = {
   name: "http",
   setup(build) {
@@ -56,11 +66,5 @@ let httpPlugin = {
   },
 };
 
-require("esbuild")
-  .build({
-    entryPoints: ["src/index.browser.js"],
-    bundle: true,
-    outfile: "dist/poly.url.bundled.js",
-    plugins: [httpPlugin],
-  })
-  .catch(() => process.exit(1));
+exports.deps = depsPlugin
+exports.http = httpPlugin
