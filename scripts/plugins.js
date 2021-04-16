@@ -1,12 +1,24 @@
-let depsPlugin = {
-  name: 'deps',
+let importMapPlugin = {
+  name: "importMap",
   setup(build) {
-    let path = require('path')
-    build.onResolve({ filter: /[\.\/]+\/deps/ }, () => ({
-      path: path.resolve('./deps.url.js')
-    }))
-  }
-}
+    let path = require("path");
+    let importMap = require(path.resolve("./import-map.json"));
+    build.onResolve({ filter: /.*/ }, (args) => {
+      console.log(args);
+
+      let mapped = importMap[args.path];
+
+      if (mapped) {
+        return {
+          path: mapped,
+          external: true,
+        };
+      }
+
+      return {};
+    });
+  },
+};
 
 let httpPlugin = {
   name: "http",
@@ -66,5 +78,5 @@ let httpPlugin = {
   },
 };
 
-exports.deps = depsPlugin
-exports.http = httpPlugin
+exports.importMap = importMapPlugin;
+exports.http = httpPlugin;
