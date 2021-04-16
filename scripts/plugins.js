@@ -4,8 +4,6 @@ let importMapPlugin = {
     let path = require("path");
     let importMap = require(path.resolve("./import-map.json"));
     build.onResolve({ filter: /.*/ }, (args) => {
-      console.log(args);
-
       let mapped = importMap[args.path];
 
       if (mapped) {

@@ -1,5 +1,5 @@
-export { Howdy } from "./howdy";
+export { time } from "./time";
 
-export function SpecialGoodbye() {
+export function specialGoodbye() {
   console.log('Goodbye, from the browser!')
 }

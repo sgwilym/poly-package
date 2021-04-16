@@ -1,6 +1,6 @@
-export { Howdy } from "./howdy";
+export { time } from "./time";
 
 // Imagine this is a Deno specific implementation of StorageSqlite.
-export function SpecialGoodbye() {
+export function specialGoodbye() {
   console.log('Goodbye, from Deno!')
 }
