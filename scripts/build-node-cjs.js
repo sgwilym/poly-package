@@ -3,9 +3,10 @@ require("esbuild")
     entryPoints: ["src/index.node.js"],
     bundle: true,
     platform: 'node',
-    format: 'esm',
-    outfile: "dist/poly.node.js",
-    external: ['dot-beat-time']
+    outfile: "dist/poly.node.cjs.js",
+    external: ['dot-beat-time'],
+    
+    
   })
   .catch((err) => {
     console.error(err);
