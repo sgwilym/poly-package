@@ -1,10 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8"/>
-</head>
-<script src="dist/poly.browser.js" type="module"></script>
+  <head>
+    <meta charset="utf-8" />
+    <title>poly-package</title>
+    <script src="/dist/poly.browser.js" type="module"></script>
+    <script type="module">
+      import { time, specialGoodbye } from "/dist/poly.browser.js";
 
-<h1>index-browser.html</h1>
-<h2>poly.browser.js</h2>
-<p>Look in the console logs to see what's happening.</p>
+      time();
+      specialGoodbye();
+    </script>
+  </head>
+  <body>
+    <h1>index-browser.html</h1>
+    <h2>poly.browser.js</h2>
+    <p>Look in the console logs to see what's happening.</p>
+  </body>
+</html>
