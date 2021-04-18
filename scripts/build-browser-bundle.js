@@ -1,12 +1,13 @@
-const plugins = require("./plugins")
+import { httpPlugin } from "./plugins.js";
+import esbuild from "esbuild";
 
-require("esbuild")
+esbuild
   .build({
-    entryPoints: ["src/index.browser.js"],
+    entryPoints: ["src/index.browser.ts"],
     bundle: true,
-    format: 'iife',
+    format: "iife",
     outfile: "dist/poly.browser.bundled.js",
-    plugins: [plugins.http],
-    globalName: 'Poly'
+    plugins: [httpPlugin],
+    globalName: "Poly",
   })
   .catch(() => process.exit(1));

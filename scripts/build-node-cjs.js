@@ -1,13 +1,14 @@
-require("esbuild")
+import esbuild from "esbuild";
+
+esbuild
   .build({
-    entryPoints: ["src/index.node.js"],
+    entryPoints: ["src/index.node.ts"],
     bundle: true,
-    platform: 'node',
+    platform: "node",
     outfile: "dist/poly.node.cjs.js",
-    external: ['dot-beat-time'],
-    
-    
+    external: ["dot-beat-time"],
   })
   .catch((err) => {
     console.error(err);
-    process.exit(1)});
+    process.exit(1);
+  });

@@ -1,12 +1,12 @@
-const plugins = require("./plugins")
+import esbuild from "esbuild";
 
-require("esbuild")
+esbuild
   .build({
-    entryPoints: ["src/index.browser.js"],
+    entryPoints: ["src/index.browser.ts"],
     bundle: true,
-    format: 'esm',
+    format: "esm",
     outfile: "dist/poly.esm.js",
-    target: ['esnext'],
-    external: ['dot-beat-time']
+    target: ["esnext"],
+    external: ["dot-beat-time"],
   })
   .catch(() => process.exit(1));

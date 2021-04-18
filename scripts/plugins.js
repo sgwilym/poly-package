@@ -1,8 +1,11 @@
-let importMapPlugin = {
+import path from 'path';
+import https from 'https'
+import http from 'http'
+
+export let importMapPlugin = {
   name: "importMap",
   setup(build) {
-    let path = require("path");
-    let importMap = require(path.resolve("./import-map.json"));
+    let importMap = import(path.resolve("./import-map.json"));
     build.onResolve({ filter: /.*/ }, (args) => {
       let mapped = importMap[args.path];
 
@@ -18,11 +21,10 @@ let importMapPlugin = {
   },
 };
 
-let httpPlugin = {
+export let httpPlugin = {
   name: "http",
   setup(build) {
-    let https = require("https");
-    let http = require("http");
+  
 
     // Intercept import paths starting with "http:" and "https:" so
     // esbuild doesn't attempt to map them to a file system location.
@@ -75,6 +77,3 @@ let httpPlugin = {
     });
   },
 };
-
-exports.importMap = importMapPlugin;
-exports.http = httpPlugin;
