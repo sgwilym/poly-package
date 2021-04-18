@@ -17,12 +17,12 @@
   },
   "scripts": {
     "build": "rm -f dist/* && npm-run-all --parallel types build-esm build-deno build-node build-browser build-browser-bundle build-node-cjs",
-    "build-esm": "node --experimental-json-modules scripts/build-esm.js",
-    "build-deno": "node --experimental-json-modules scripts/build-deno.js",
-    "build-node": "node --experimental-json-modules scripts/build-node.js",
-    "build-node-cjs": "node --experimental-json-modules scripts/build-node-cjs.js",
-    "build-browser": "node --experimental-json-modules scripts/build-browser.js",
-    "build-browser-bundle": "node --experimental-json-modules scripts/build-browser-bundle.js",
+    "build-esm": "node --experimental-modules --experimental-json-modules scripts/build-esm.js",
+    "build-deno": "node --experimental-modules --experimental-json-modules scripts/build-deno.js",
+    "build-node": "node --experimental-modules --experimental-json-modules scripts/build-node.js",
+    "build-node-cjs": "node --experimental-modules --experimental-json-modules scripts/build-node-cjs.js",
+    "build-browser": "node --experimental-modules --experimental-json-modules scripts/build-browser.js",
+    "build-browser-bundle": "node --experimental-modules --experimental-json-modules scripts/build-browser-bundle.js",
     "types": "dts-bundle-generator -o dist/poly.d.ts src/index.ts"
   },
   "author": "Sam Gwilym",
