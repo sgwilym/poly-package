@@ -2,7 +2,8 @@
   "name": "poly-package",
   "version": "1.0.0",
   "description": "A package that works in many environments and runtimes",
-  "main": "dist/node.cjs.js",
+  "main": "dist/poly.node.cjs",
+  "module": "dist/poly.esm.js",
   "types": "dist/poly.d.ts",
   "type": "module",
   "exports": {
