@@ -8,13 +8,13 @@
   "type": "module",
   "exports": {
     "import": {
-      "browser": "dist/poly.esm.js",
-      "node": "dist/poly.node.mjs",
-      "deno": "dist/poly.deno.js",
-      "default": "dist/poly.esm.js"
+      "browser": "./dist/poly.esm.js",
+      "node": "./dist/poly.node.mjs",
+      "deno": "./dist/poly.deno.js",
+      "default": "./dist/poly.esm.js"
     },
-    "require": "dist/poly.node.cjs",
-    "script": "dist/poly.browser.bundled.js"
+    "require": "./dist/poly.node.cjs",
+    "script": "./dist/poly.browser.bundled.js"
   },
   "scripts": {
     "build": "rm -f dist/* && npm-run-all --parallel types build-esm build-deno build-node build-browser build-browser-bundle build-node-cjs",
