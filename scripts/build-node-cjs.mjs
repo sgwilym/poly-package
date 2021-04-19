@@ -5,7 +5,7 @@ esbuild
     entryPoints: ["src/index.node.ts"],
     bundle: true,
     platform: "node",
-    outfile: "dist/poly.node.cjs.js",
+    outfile: "dist/poly.node.cjs",
     external: ["dot-beat-time"],
   })
   .catch((err) => {

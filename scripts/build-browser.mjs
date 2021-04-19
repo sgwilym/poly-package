@@ -1,5 +1,5 @@
-import { importMapPlugin } from './plugins.js';
-import esbuild from 'esbuild'
+import { importMapPlugin } from "./plugins.mjs";
+import esbuild from "esbuild";
 
 esbuild
   .build({

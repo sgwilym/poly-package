@@ -8,21 +8,21 @@
   "exports": {
     "import": {
       "browser": "dist/poly.esm.js",
-      "node": "dist/poly.node.js",
+      "node": "dist/poly.node.mjs",
       "deno": "dist/poly.deno.js",
       "default": "dist/poly.esm.js"
     },
-    "require": "dist/poly.node.cjs.js",
+    "require": "dist/poly.node.cjs",
     "script": "dist/poly.browser.bundled.js"
   },
   "scripts": {
     "build": "rm -f dist/* && npm-run-all --parallel types build-esm build-deno build-node build-browser build-browser-bundle build-node-cjs",
-    "build-esm": "node --experimental-json-modules scripts/build-esm.js",
-    "build-deno": "node --experimental-json-modules scripts/build-deno.js",
-    "build-node": "node --experimental-json-modules scripts/build-node.js",
-    "build-node-cjs": "node --experimental-json-modules scripts/build-node-cjs.js",
-    "build-browser": "node --experimental-json-modules scripts/build-browser.js",
-    "build-browser-bundle": "node --experimental-json-modules scripts/build-browser-bundle.js",
+    "build-esm": "node --experimental-json-modules scripts/build-esm.mjs",
+    "build-deno": "node --experimental-json-modules scripts/build-deno.mjs",
+    "build-node": "node --experimental-json-modules scripts/build-node.mjs",
+    "build-node-cjs": "node --experimental-json-modules scripts/build-node-cjs.mjs",
+    "build-browser": "node --experimental-json-modules scripts/build-browser.mjs",
+    "build-browser-bundle": "node --experimental-json-modules scripts/build-browser-bundle.mjs",
     "types": "dts-bundle-generator -o dist/poly.d.ts src/index.ts"
   },
   "author": "Sam Gwilym",

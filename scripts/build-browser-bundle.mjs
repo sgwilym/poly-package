@@ -1,4 +1,4 @@
-import { httpPlugin } from "./plugins.js";
+import { httpPlugin } from "./plugins.mjs";
 import esbuild from "esbuild";
 
 esbuild
