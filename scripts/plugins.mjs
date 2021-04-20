@@ -1,7 +1,37 @@
+import fs from "fs";
 import path from "path";
 import https from "https";
 import http from "http";
 import importMap from "../import-map.json";
+
+function conditionedPath(condition, pathStr) {
+  return `${pathStr}.${condition}.ts`;
+}
+
+export const conditionsPlugin = {
+  name: "conditions",
+  setup(build) {
+    const conditionString = build.initialOptions.conditions.join(".");
+
+    build.onResolve({ filter: /(\.\/|\.\.\/)+[a-zA-Z]*/ }, (args) => {
+      // TODO: does this exclude external packages?
+
+      const conditionPath = conditionedPath(conditionString, args.path);
+
+      const exists = fs.existsSync(
+        path.resolve(args.resolveDir, conditionPath)
+      );
+
+      if (exists) {
+        return {
+          path: path.resolve(args.resolveDir, conditionPath),
+        };
+      }
+
+      return {};
+    });
+  },
+};
 
 export const importMapPlugin = {
   name: "importMap",
