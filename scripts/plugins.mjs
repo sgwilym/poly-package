@@ -1,11 +1,11 @@
-import path from 'path';
-import https from 'https'
-import http from 'http'
+import path from "path";
+import https from "https";
+import http from "http";
+import importMap from "../import-map.json";
 
-export let importMapPlugin = {
+export const importMapPlugin = {
   name: "importMap",
   setup(build) {
-    let importMap = import(path.resolve("./import-map.json"));
     build.onResolve({ filter: /.*/ }, (args) => {
       let mapped = importMap[args.path];
 
@@ -21,11 +21,9 @@ export let importMapPlugin = {
   },
 };
 
-export let httpPlugin = {
+export const httpPlugin = {
   name: "http",
   setup(build) {
-  
-
     // Intercept import paths starting with "http:" and "https:" so
     // esbuild doesn't attempt to map them to a file system location.
     // Tag them with the "http-url" namespace to associate them with
